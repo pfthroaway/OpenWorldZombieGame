@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://Meshes/gunz.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Meshes/land.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://scenes/move.gd" type="Script" id=3]
 
@@ -34,4 +35,11 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.63564, 0 )
 
 [node name="Camera" type="Camera" parent="KinematicBody/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 far = 300.0
+
+[node name="gunz" type="MeshInstance" parent="KinematicBody/Spatial/Camera"]
+transform = Transform( -0.264011, 0, 0.000493035, 0, 0.264011, 0, -0.000493035, 0, -0.264011, 1.65794, -1.0268, -2.66121 )
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
