@@ -42,18 +42,35 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GodotSharp">
-      <HintPath>$(ProjectDir)\.mono\assemblies\$(ApiConfiguration)\GodotSharp.dll</HintPath>
       <Private>False</Private>
+      <HintPath>$(ProjectDir)/.mono/assemblies/$(ApiConfiguration)/GodotSharp.dll</HintPath>
     </Reference>
     <Reference Include="GodotSharpEditor" Condition=" '$(Configuration)' == 'Tools' ">
-      <HintPath>$(ProjectDir)\.mono\assemblies\$(ApiConfiguration)\GodotSharpEditor.dll</HintPath>
       <Private>False</Private>
+      <HintPath>$(ProjectDir)/.mono/assemblies/$(ApiConfiguration)/GodotSharpEditor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\entities\LivingEntity.cs" />
+    <Compile Include="classes\entities\Merchant.cs" />
+    <Compile Include="classes\entities\NPC.cs" />
+    <Compile Include="classes\entities\Player.cs" />
+    <Compile Include="classes\Extensions.cs" />
+    <Compile Include="classes\items\AmmoType.cs" />
+    <Compile Include="classes\items\Armor.cs" />
+    <Compile Include="classes\items\BodyArmor.cs" />
+    <Compile Include="classes\items\HeadArmor.cs" />
+    <Compile Include="classes\items\LegArmor.cs" />
+    <Compile Include="classes\items\MeleeWeapon.cs" />
+    <Compile Include="classes\items\QuestItem.cs" />
+    <Compile Include="classes\items\RangedWeapon.cs" />
     <Compile Include="classes\items\Item.cs" />
+    <Compile Include="classes\items\Weapon.cs" />
+    <Compile Include="classes\Quest.cs" />
     <Compile Include="enums\ItemType.cs" />
+    <Compile Include="enums\QuestType.cs" />
+    <Compile Include="enums\WeaponType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="scenes\MainScene.cs" />
   </ItemGroup>

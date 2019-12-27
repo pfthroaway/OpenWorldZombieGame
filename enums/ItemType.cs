@@ -2,9 +2,10 @@
 {
     public enum ItemType
     {
-        Block,
-        Healing,
         MeleeWeapon,
-        RangedWeapon
+        RangedWeapon,
+        HeadArmor,
+        BodyArmor,
+        LegArmor
     }
 }
