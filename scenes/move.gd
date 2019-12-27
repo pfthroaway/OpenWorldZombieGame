@@ -1,7 +1,12 @@
 extends KinematicBody
 
 var velocity:=Vector3();
-const GRAVITY:= 9.8;
+var speed := 50;
+var direction := Vector3();
+var jump := false;
+var can_jump:=true;
+const JUMP_FORCE:= 15;
+const GRAVITY:= 100;
 onready var camera = $Spatial/Camera;
 
 func _ready() -> void:
@@ -24,26 +29,50 @@ func _input(event: InputEvent) -> void:
 		if self.rotation_degrees.y > 180:
 			self.rotation_degrees.y = -180;
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 
-	velocity = Vector3.ZERO;
+	var imove := Vector2();
 
-	if is_on_floor():
-		pass
-	else:
-		velocity.y -= GRAVITY;
+	direction = Vector3();
+
+	jump = Input.is_action_pressed("jump");
 
 	if Input.is_action_pressed("forward"):
-		velocity += self.transform.basis.z * -10;
+		imove.y += 1;
 
 	if Input.is_action_pressed("back"):
-		velocity += self.transform.basis.z * 10;
+		imove.y -= 1;
 
 	if Input.is_action_pressed("left"):
-		velocity += self.transform.basis.x * -10;
+		imove.x -= 1;
 
 	if Input.is_action_pressed("right"):
-		velocity += self.transform.basis.x * 10;
+		imove.x += 1;
 
-func _physics_process(delta: float) -> void:
-	move_and_slide(velocity)
+	imove = imove.normalized();
+
+	direction += -self.transform.basis.z * imove.y;
+	direction += self.transform.basis.x * imove.x;
+
+	direction.y = 0;
+	direction = direction.normalized();
+
+	velocity.y -= delta * GRAVITY;
+
+	var target = direction * speed;
+
+	var hvel:Vector3 = velocity;
+	hvel.y = 0;
+	hvel = hvel.linear_interpolate(target, 5 * delta);
+
+	if is_on_floor():
+		can_jump = true;
+
+	if jump and can_jump:
+		can_jump = false;
+		velocity.y = JUMP_FORCE;
+
+	velocity.x = hvel.x;
+	velocity.z = hvel.z;
+
+	velocity = move_and_slide(velocity, Vector3.UP);
