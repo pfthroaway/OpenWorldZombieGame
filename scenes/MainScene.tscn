@@ -11,6 +11,7 @@ radius = 1.91462
 height = 3.46834
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
 
 [node name="land" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7904, -14.9901, -13.2672 )
