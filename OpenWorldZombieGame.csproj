@@ -63,6 +63,7 @@
     <Compile Include="classes\items\Item.cs" />
     <Compile Include="classes\items\Weapon.cs" />
     <Compile Include="classes\Quest.cs" />
+    <Compile Include="enums\ArmorType.cs" />
     <Compile Include="enums\ItemType.cs" />
     <Compile Include="enums\QuestType.cs" />
     <Compile Include="enums\WeaponType.cs" />

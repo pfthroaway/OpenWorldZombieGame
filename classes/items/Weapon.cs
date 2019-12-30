@@ -21,6 +21,6 @@ namespace OpenWorldZombieGame.Classes.Items
         public int AmmoCount { get; set; }
 
         /// <summary>The type of <see cref="Weapon"/>.</summary>
-        public WeaponType Type { get; set; }
+        public WeaponType WeaponType { get; set; }
     }
 }
