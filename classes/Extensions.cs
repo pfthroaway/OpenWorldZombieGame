@@ -1,4 +1,4 @@
-﻿namespace OpenWorldZombieGame.classes
+﻿namespace OpenWorldZombieGame.Classes
 {
     public static class Extensions
     {
