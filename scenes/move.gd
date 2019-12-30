@@ -5,7 +5,7 @@ var speed := 50;
 var direction := Vector3();
 var jump := false;
 var can_jump:=true;
-const JUMP_FORCE:= 15;
+const JUMP_FORCE:= 30;
 const GRAVITY:= 100;
 onready var camera = $Spatial/Camera;
 
@@ -16,8 +16,8 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		var e:InputEventMouseMotion = event;
-		self.rotate_y(e.relative.x * -0.006);
-		camera.rotate_x(e.relative.y * -0.006);
+		self.rotate_y(e.relative.x * -0.003);
+		camera.rotate_x(e.relative.y * -0.003);
 
 		if camera.rotation_degrees.x > 70:
 			camera.rotation_degrees.x = 70;
