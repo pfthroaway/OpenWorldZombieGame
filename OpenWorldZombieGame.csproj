@@ -59,12 +59,7 @@
     <Compile Include="classes\Extensions.cs" />
     <Compile Include="classes\items\AmmoType.cs" />
     <Compile Include="classes\items\Armor.cs" />
-    <Compile Include="classes\items\BodyArmor.cs" />
-    <Compile Include="classes\items\HeadArmor.cs" />
-    <Compile Include="classes\items\LegArmor.cs" />
-    <Compile Include="classes\items\MeleeWeapon.cs" />
     <Compile Include="classes\items\QuestItem.cs" />
-    <Compile Include="classes\items\RangedWeapon.cs" />
     <Compile Include="classes\items\Item.cs" />
     <Compile Include="classes\items\Weapon.cs" />
     <Compile Include="classes\Quest.cs" />
