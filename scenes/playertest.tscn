@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/move.gd" type="Script" id=1]
+[ext_resource path="res://Meshes/gunz.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 1.91462
+height = 3.46834
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.825611, 1, 0.773782 )
+
+[node name="KinematicBody" type="KinematicBody"]
+transform = Transform( -0.490569, 0, -0.871402, 0, 1, 0, 0.871402, 0, -0.490569, 0, 6.30451, 0 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.63564, 0 )
+
+[node name="Camera" type="Camera" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0166442, 0.00103474, 1.15848 )
+far = 300.0
+
+[node name="gunz" type="MeshInstance" parent="Spatial/Camera"]
+transform = Transform( -0.12872, 0, 0.000240378, 0, 0.12872, 0, -0.000240378, 0, -0.12872, 0.620185, -0.534789, -1.62761 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 1.01048, 0, 0, 0, 1.01048, 0, 0, 0, 1.01048, 0, -2.63173, 0 )
+shape = SubResource( 2 )
